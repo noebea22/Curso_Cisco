@@ -1,3 +1,4 @@
+print ("Trabajo Final")
 def DisplayBoard(board):
 #
 # la función acepta un parámetro el cual contiene el estado actual del tablero
