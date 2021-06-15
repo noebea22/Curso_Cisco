@@ -1,16 +1,16 @@
 print ("Trabajo Final: Proyecto tateti")
 board=[]
 def DisplayBoard(board):
-    n=1
-    board =[[n for i in range (3)]for j in range (3)]
-    for i in range (3):
-        for j in range (3):
-            board [i][j] = n
-            n += 1
-            board[1][1]= "x"
-    print(board)
-
-DisplayBoard(board)
+    n=0
+    board =[]
+    for j in range (3):
+        for i in range (1):
+            print("+-------"*3, "+", sep="")
+            print("|       "*3, "|", sep="")
+            print("|   "+ str (3*j+i+1),"   ","|   "+ str (3*j+i+2),"   ","|   "+ str (3*j+i+3),"  "," |", sep="")
+            print("|       "*3, "|", sep="")
+    print("+-------"*3, "+", sep="")
+DisplayBoard(board)  
 
 
 #def EnterMove(board):
