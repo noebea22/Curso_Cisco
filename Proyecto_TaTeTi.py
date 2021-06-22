@@ -1,7 +1,7 @@
 print ("Trabajo Final: Proyecto tateti")
+from random import randrange
 board=[]
 def DisplayBoard(board):
-    n=0
     board =[]
     for j in range (3):
         for i in range (1):
@@ -10,15 +10,26 @@ def DisplayBoard(board):
             print("|   "+ str (3*j+i+1),"   ","|   "+ str (3*j+i+2),"   ","|   "+ str (3*j+i+3),"  "," |", sep="")
             print("|       "*3, "|", sep="")
     print("+-------"*3, "+", sep="")
-DisplayBoard(board)  
 
-
-#def EnterMove(board):
-#
-# la función acepta el estado actual del tablero y pregunta al usuario acerca de su movimiento, 
-# verifica la entrada y actualiza el tablero acorde a la decisión del usuario
-#
-
+def EnterMove(board):
+	ok = False	# suposición falsa - lo necesitamos para entrar en el bucle
+	while not ok:
+		move = input("Ingresa tu movimiento: ") 
+		ok = len(move) == 1 and move >= '1' and move <= '9' # ¿es valido lo que ingreso el usuario?
+		if ok is False:
+			print("Movimiento erróneo, ingrésalo nuevamente") # no, no lo es. Ingrésalo nuevamente.
+			continue
+		move = int(move) - 1 	# numero de la celda, del 0 al 8
+		row = move // 3 	# fila de la celda
+		col = move % 3		# columna de la celda
+		sign = board[row][col]	# marca el cuadro elegido
+		ok = sign not in ['O','X'] 
+		if not ok:	# esta ocupado, ingresa una posición nuevamente
+			print("¡Campo ocupado, ingresa nuevamente!")
+			continue
+	board[row][col] = 'O' 	# colocar '0' al cuadro seleccionado
+    
+      
 #def MakeListOfFreeFields(board):
 #
 # la función examina el tablero y construye una lista de todos los cuadros vacíos 
@@ -35,3 +46,7 @@ DisplayBoard(board)
 #
 # la función dibuja el movimiento de la maquina y actualiza el tablero
 #
+
+board [1][1] = "X" 
+DisplayBoard(board) 
+EnterMove(board)
