@@ -1,17 +1,19 @@
 def readint(prompt, min, max):
-    ok = False
+    ok=False
     while not ok:
         try:
-            value = int(input(prompt))
-            ok = True
+            v =float(input(prompt))
+            v = int(v)
+            if v>=min and v<=max:
+                ok = True
+            else:
+                print('Error:Fuera de rango especificado')
+                ok = False
         except ValueError:
-            print("Error: entrada incorrecta")
-        if ok:
-            ok = value >= min and value <= max
-        if not ok:
-            print("Error: el valor no esta dentro del rango permitido (" + str(min) + ".." + str(max) + ")")
-    return value
+                print('Error:entrada incorrecta')
+                ok = False
+    return v
 
-v = readint("Ingresa un número entre -10 a 10: ", -10, 10)
+v = readint("Ingresa un numero de -10 a 10: ", -10, 10)
 
 print("El numero es:", v)
