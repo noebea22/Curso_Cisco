@@ -14,3 +14,10 @@ for i in first:
             ok = 'No son anagramas'
             break  
 print(ok)
+
+#cadenax1 = ''.join(sorted(list(cadena1.upper().replace(' ',''))))
+#cadenax2 = ''.join(sorted(list(cadena2.upper().replace(' ',''))))
+#if len(cadenax1) > 0 and cadenax1 == cadenax2:
+#	print("Anagramas")
+#else:
+#	print("No son Anagramas")
